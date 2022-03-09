@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(bk.jpg);
+    box-sizing: border-box;
+}
+.panel {
+    background: rgb(215,115,0);
+    width: auto;
+    border-bottom: 20px solid rgb(249,197,36);
+    box-shadow: 0 5px 10px #aaa;
+}
+
+.wrapper{
+    width: auto;
+    max-width: 1026px;
+    word-wrap: break-word;
+    margin-left: 40%;
+    margin-top: 22%;
+}
+
+.button a{
+    color: white;
+    text-decoration: none;
+    z-index: 2;
+}
+
+.button{
+    height: 40px;
+    width: 405px;
+    font-family: MinecraftiaRegular;
+    text-decoration: none;
+    text-align: center;
+    background: url('btn1.png') no-repeat;
+    line-height: 26px;
+    padding-top: 6px;
+    margin-top: 15px;
+}
+.button button {
+    background: none;
+    border: none;
+    margin: 0;
+    cursor: pointer;
+    font-family: MinecraftiaRegular;
+    padding: 0;
+    color: white;
+    font-size: 18px;
+    width: 405px;
+}
+
+
+.button:hover{
+    background: url('btn2.png') no-repeat;
+}
+
+.server-input {
+    width: 405px;
+    border:0;
+    border-bottom:2px solid rgb(255, 123, 0);  
+    font-family: MinecraftiaRegular;
+    height: 30px;
+    font-size: 20px;
+    background:transparent;
+    padding:8px 0 5px 0;
+    margin-right: 200px;
+}
+
+.server-input:focus{ 
+    border:none;	
+    outline:none;
+    border-bottom:2px solid #e74c3c;	
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+.container {
+    display: grid;
+    align-items: center;
+    font-size: 20px;
+    font-family:MinecraftiaRegular;
+    justify-content: center;
+    color: rgb(0, 140, 255);
+    margin-top: 15%;
+    font-weight: bold; 
+}
+
+.ip-con {
+    margin-left: 40%;
+}
+.port2 {
+    margin-left: 42%;
+}
+.server-status {
+    margin-left:41%;
+}
+.players {
+    margin-left:40%;
+}
