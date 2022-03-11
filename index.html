@@ -11,7 +11,6 @@
 <body>
     <div class="wrapper">
         <input class="server-input ip" type="text" name="server" id="server" placeholder="Server IP...">
-        <input class="server-input port" type="number" name="port" id="port" placeholder="Port...">
         <div class="button"><button onclick="clicks()">Get Status</button></div>
     </div>
 
@@ -21,6 +20,14 @@
         <p class="server-status">Status: NOT FOUND </p>
         <p class="port2">Port: NOT FOUND </p>
         <p class="players">Players: NOT FOUND </p>
+        <div style="margin-left: 380px !important;" id="divPlayers" class="button"><button id="players">PlayerList</button></div>
+    </div>
+
+    <div style="display: none;" class="playersList">
+        <h1>PlayerList</h1>
+        <ul>
+
+        </ul>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="index.js"></script>
