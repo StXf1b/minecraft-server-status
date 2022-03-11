@@ -101,3 +101,22 @@ input::-webkit-inner-spin-button {
 .players {
     margin-left:40%;
 }
+
+.playersList {
+    font-family: MinecraftiaRegular;
+    align-items: center;
+    justify-content: center;
+}
+
+.playersList h1 {
+    color:rgb(0, 140, 255);
+    font-weight: bold;
+}
+
+.playersList ul li {
+    list-style: none;
+    margin-top: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color:rgb(253, 91, 91);
+}

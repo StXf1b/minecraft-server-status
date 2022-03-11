@@ -1,34 +1,49 @@
 function clicks() {
     const ip = document.getElementById("server").value;
-    const port = document.getElementById("port").value || 25565;
     $(".wrapper").css({
         "display": "none"
     });
     $(".container").css({
         "display": "grid"
     });
-    $(".port2").text("Port: " + port);
-    fetch(`https://mcapi.us/server/status?ip=${ip}&port=${port}`)
+    fetch(`https://api.mcsrvstat.us/2/${ip}`)
     .then(response => response.json())
     .then((data) => {
-        let status = data.status;
-
-        if (status === "success") {
+            if(data.players.list) {
+                data.players.list.forEach((e) => {
+                    $("#players").click(() => {
+                        $(".container").css({
+                            "display": "none"
+                        });
+                        $(".wrapper").css({
+                            "display": "none"
+                        });
+                        $(".playersList").css({
+                            "display": "grid"
+                        });
+                        $("ul").append(`<li>${e}</li>`);
+                    })
+                });
+            } else {
+                $("#divPlayers").css({"display":"none"})
+            }
             let maxPlayers = data.players.max;
-            let minPlayers = data.players.now;
+            let minPlayers = data.players.online;
             let serverStatus = data.online; // return true or false
             let totalPlayers = minPlayers + "/" + maxPlayers;
-            let motd = data.motd;
-            $(".motd").text(motd);
-            $(".ip-con").text("IP: " + ip);
+            let motd = data.motd.html;
+            let ipA = data.ip;
+            let port = data.port;
+            $(".motd").html(motd);
+            $(".ip-con").text("IP: " + ipA);
+            $(".port2").text("Port: " + port);
             if(serverStatus == true) {
                 $(".server-status").text("Status: " + "Online");
             } else {
                 $(".server-status").text("Status: " + "Offline");
             }
             $(".players").text("Players: " + totalPlayers);
-        } else {
-            alert("The server you have entered dose not exist!")
+        
         }
-    })
+    )
 }
